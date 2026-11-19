@@ -38,7 +38,7 @@ body {
 }
 
 #status {
-	background-color: #242424;
+	background-color: #0d0e0f;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -92,7 +92,17 @@ body {
 		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
-
+<style>
+#status { visibility: visible; color-scheme: dark; }
+#status-progress { accent-color: #daa963; height: 6px; width: clamp(100px, 24vw, 320px); bottom: 7%; }
+@media (max-aspect-ratio: 2/1) {
+  #status-splash.fullsize--true { object-fit: cover; object-position: 40% center; }
+}
+@media (orientation: portrait) {
+  #status-splash.fullsize--true { height: min(100%, 114vw); }
+  #status-progress { bottom: max(7%, calc((100% - 114vw) / 2 + 1rem)); }
+}
+</style>
 	</head>
 	<body>
 		<canvas id="canvas">
@@ -111,7 +121,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":77753052,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":83164148,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
